@@ -2051,7 +2051,7 @@ struct page *__rmqueue_smallest(struct zone *zone, unsigned int order,
 
 static inline struct page * __rmqueue_kernel_fallback(struct zone *zone, unsigned int order, int start_migratetype)
 {
-        struct page *page;
+	struct page *page;
 	int fallback_mt;
 
 	if (start_migratetype == MIGRATE_UNMOVABLE)
@@ -2059,7 +2059,7 @@ static inline struct page * __rmqueue_kernel_fallback(struct zone *zone, unsigne
 	else
 		fallback_mt = MIGRATE_UNMOVABLE;
 
-        page = __rmqueue_smallest(zone, order, fallback_mt);
+	page = __rmqueue_smallest(zone, order, fallback_mt);
 
 	if (page)
 		return page;
